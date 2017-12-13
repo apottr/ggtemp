@@ -1,0 +1,25 @@
+
+SPECIFIC QUERIES
+
+exact query (tile,time,uuid)
+  4QFJ12345678/2017-01-01;23:00:00Z/56c7834d-03c5-4168-916b-050c7f6f19fc/
+
+get all nodes at (tile,time)
+  4QFJ12345678/2017-01-01;23:00:00Z//
+
+get all time blocks at (tile,uuid)
+  4QFJ12345678//56c7834d-03c5-4168-916b-050c7f6f19fc/
+
+NON-SPECIFIC QUERIES
+
+get all nodes that match query at tile and time
+  4QFJ12345678/2017-01-01;23:00:00Z/prop%data,prop%data/
+
+get all nodes that are within a larger tile
+  4QFJ123456/2017-01-01;23:00:00Z//
+
+get all nodes that are within a time range
+  4QFJ12345678/2017-01-01;23:00:00Z,2017-01-04;00:00:00Z//
+
+
+
