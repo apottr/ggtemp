@@ -1,5 +1,49 @@
+QUERY STRUCTURE
 
-SPECIFIC QUERIES
+  <geospatial identifier or query>/<temporal identifier or query>/<node identifier or query>/
+
+OPERATORS
+
+available query operators are:
+  , stack item separator
+  " quoted item in stack, escapes restricted characters
+  = used for checking equality
+  % used for checking similarity or contains or like
+
+
+GEOSPATIAL QUERY SEGMENT
+
+several possible geospatial identifier formats are available. some examples are:
+  MGRS
+    4QFJ12345678,MGRS
+  EASTING AND NORTHING
+    123456,123456,U11
+  WGS84
+    37.5,42.3,WGS84
+  PROJ4
+    "+proj=stere +lat_0=90 +lat_ts=75",PROJ4
+    
+
+TEMPORAL QUERY SEGMENT
+
+the engine's timezone is ZULU. this must be included in the query for readability purposes.
+date ranges can be:
+  2017-01-01;23:00:00Z,2017-01-04;23:00:00Z
+  2017-01-01,2017-01-04 (this one assumes a starting time of 00:00:00Z)
+  2004,2006 (assumes 01-01 for the starting year, 31-12 for the ending year)
+
+NODE QUERY SEGMENT
+
+nodes must be requested only two ways:
+  explicitly:
+    56c7834d-03c5-4168-916b-050c7f6f19fc
+  by query:
+    username%test
+    username=test123
+    username%test,description%asdf
+
+
+SAMPLE QUERIES
 
 exact query (tile,time,uuid)
   4QFJ12345678/2017-01-01;23:00:00Z/56c7834d-03c5-4168-916b-050c7f6f19fc/
